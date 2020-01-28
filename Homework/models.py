@@ -35,5 +35,18 @@ class User(models.Model):
     def login(self, nickname, password):
         # TODO log in
         # user = db.find(nickname)
-        #if password == user.passhash ...
+        # if password == user.passhash ...
+        pass
+
+
+class Deadline(models.Model):
+    groupId = models.ForeignKey(Group, on_delete=models.CASCADE)
+    expDate = models.DateTimeField('date and time of expiration of a deadline')
+    body = models.CharField('some text about this deadline', max_length=228)
+    state = models.BooleanField('0 - soft deadline, 1 - hard deadline')
+
+    def __str__(self):
+        return self.body
+
+    def addDeadline(self):
         pass
