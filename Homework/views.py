@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from emoji import emojize
 from .models import Group, User, Deadline
 from django.template import loader
+
+
 # Create your views here.
 
 
@@ -18,16 +20,18 @@ def deadlineDetails(request, deadlineId):
 
 
 def groupDetails(request, groupId):
-    template = loader.get_template('group.html')
-    group = Group.objects.get(id=groupId)
-    userList = ', '.join(str(user) for user in group.user_set.all())
-    deadlineList = ', '.join(str(deadline) for deadline in group.deadline_set.all())
-    context = {
-        'groupName': str(group),
-        'userList': userList,
-        'deadlineList': deadlineList,
-    }
-    return HttpResponse(template.render(context, request))
+    try:
+        group = Group.objects.get(id=groupId)
+        userList = ', '.join(str(user) for user in group.user_set.all())
+        deadlineList = ', '.join(str(deadline) for deadline in group.deadline_set.all())
+        context = {
+            'groupName': str(group),
+            'userList': userList,
+            'deadlineList': deadlineList,
+        }
+    except Group.DoesNotExist:
+        raise Http404("Group does not exist")
+    return render(request, 'group.html', context)
 
 
 def userDetails(request, userId):
