@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from emoji import emojize
 from .models import Group, User, Deadline
+from django.template import loader
 # Create your views here.
 
 
@@ -17,13 +18,16 @@ def deadlineDetails(request, deadlineId):
 
 
 def groupDetails(request, groupId):
+    template = loader.get_template('group.html')
     group = Group.objects.get(id=groupId)
-    users = group.user_set.all()
-    userList = ""
-    for user in users:
-        userList += str(user) + ','
-    return HttpResponse(f"this is group {str(group)}. Users = {userList}"
-                        f"{emojize(':thinking_face:')}")
+    userList = ', '.join(str(user) for user in group.user_set.all())
+    deadlineList = ', '.join(str(deadline) for deadline in group.deadline_set.all())
+    context = {
+        'groupName': str(group),
+        'userList': userList,
+        'deadlineList': deadlineList,
+    }
+    return HttpResponse(template.render(context, request))
 
 
 def userDetails(request, userId):
