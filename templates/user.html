@@ -6,12 +6,14 @@
 </head>
 <body>
     <h2>
-        User {{ userName }} from group {{ groupName }}
+        User {{ userName }} from group <a href="{% url "homework:group" group.id %}">{{ group.name }}</a>
     </h2>
 
     <h3>
         Deadlines:
     </h3>
-    {{ deadlineList }}
+    {% for deadline in deadlineList %}
+        <a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a>
+    {% endfor %}
 </body>
 </html>

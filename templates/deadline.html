@@ -2,15 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Deadline {{ deadlineName }}</title>
+    <title>Deadline {{ deadline.body }}</title>
 </head>
 <body>
     <h2>
-        Deadline {{ deadlineName }}
+        Deadline {{ deadline.body }}
     </h2>
+    <h3>
+        Expiration date - {{ deadline.expDate }}
+    </h3>
+    <h3>
+        State -
+        {% if deadline.state %}
+            Hard
+        {% else %}
+            Soft
+        {% endif %}
+    </h3>
     <h3>
         Group:
     </h3>
-    {{ groupName }}
+    <a href="{% url "homework:group" group.id %}">{{ group.name }}</a>
 </body>
 </html>

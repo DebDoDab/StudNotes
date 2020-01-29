@@ -11,13 +11,17 @@
     <h3>
         Users:
     </h3>
-    {{ userList }}
+        {% for user in userList %}
+            <a href="{% url "homework:user" user.id %}">{{ user.nickname }}</a><br>
+        {% endfor %}
     <br>
     <br>
     <br>
     <h3>
         Deadlines:
     </h3>
-    {{ deadlineList }}
+    {% for deadline in deadlineList %}
+        <a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a><br>
+    {% endfor %}
 </body>
 </html>

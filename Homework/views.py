@@ -16,20 +16,18 @@ def index(request):
 def deadlineDetails(request, deadlineId):
     deadline = get_object_or_404(Deadline, id=deadlineId)
     context = {
-        'deadlineName': str(deadline),
-        'groupName': str(deadline.groupId),
+        'deadline': deadline,
+        'group': deadline.groupId,
     }
     return render(request, 'deadline.html', context)
 
 
 def groupDetails(request, groupId):
     group = get_object_or_404(Group, id=groupId)
-    userList = ', '.join(str(user) for user in group.user_set.all())
-    deadlineList = ', '.join(str(deadline) for deadline in group.deadline_set.all())
     context = {
         'groupName': str(group),
-        'userList': userList,
-        'deadlineList': deadlineList,
+        'userList': group.user_set.all(),
+        'deadlineList': group.deadline_set.all(),
     }
     return render(request, 'group.html', context)
 
@@ -38,8 +36,8 @@ def userDetails(request, userId):
     user = get_object_or_404(User, id=userId)
     context = {
         'userName': str(user),
-        'groupName': str(user.groupId),
-        'deadlineList': ', '.join(str(deadline) for deadline in Deadline.objects.filter(groupId_id=user.groupId_id)),
+        'group': user.groupId,
+        'deadlineList': Deadline.objects.filter(groupId_id=user.groupId_id),
     }
     return render(request, 'user.html', context)
 
