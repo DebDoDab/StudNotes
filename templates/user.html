@@ -10,10 +10,17 @@
     </h2>
 
     <h3>
-        Deadlines:
+        Resolved Deadlines:
     </h3>
-    {% for deadline in deadlineList %}
-        <a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a>
+    {% for deadline in resolvedDeadlineList %}
+        <s><a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a><br></s>
+    {% endfor %}
+
+    <h3>
+        Unresolved Deadlines:
+    </h3>
+    {% for deadline in unresolvedDeadlineList %}
+        <a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a><br>
     {% endfor %}
 </body>
 </html>

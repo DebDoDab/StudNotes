@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Group {{ groupName }}</title>
+    <title>Group {{ group.name }}</title>
 </head>
 <body>
     <h2>
-        Group {{ groupName }}
+        Group {{ group.name }}
     </h2>
     <h3>
         Users:
@@ -23,5 +23,16 @@
     {% for deadline in deadlineList %}
         <a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a><br>
     {% endfor %}
+
+    <h3>Add deadline</h3>
+    <form action="{% url "homework:adddeadline" group.id %}" method="POST">
+        {% csrf_token %}
+
+        <input type="text" required placeholder="deadline body" name="body"><br>
+        <input type="checkbox" name="state">State<br>
+        <input type="date" required value="2020-06-12" name="expdate"><br>
+
+        <button type="submit">Submit new deadline</button>
+    </form>
 </body>
 </html>

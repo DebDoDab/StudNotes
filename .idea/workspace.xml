@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e442b54-d03e-4cbc-ba11-03f11652cdcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Homework/migrations/0003_unresolveddeadline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework/migrations/0004_auto_20200129_1230.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework/migrations/0005_auto_20200129_1232.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework/migrations/0006_auto_20200129_1233.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deadline.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deadline.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/group.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/group.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user.html" afterDir="false" />
     </list>
@@ -28,13 +35,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1X1t0Hyth5e3y7laLh6TMhX44Tm" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -92,7 +102,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580225203450</updated>
       <workItem from="1580225217755" duration="13293000" />
-      <workItem from="1580244832862" duration="11391000" />
+      <workItem from="1580244832862" duration="17900000" />
     </task>
     <task id="LOCAL-00001" summary="First view added">
       <created>1580232682019</created>
@@ -157,13 +167,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580290556172</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added links in Groups', Users', Deadlines' views">
+      <created>1580291386505</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1580291386505</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="First view added" />
     <MESSAGE value="Some models added" />
     <MESSAGE value="Fixes" />
@@ -173,7 +191,8 @@
     <MESSAGE value="Added 404 shortcut" />
     <MESSAGE value="Added templates for Users and Deadlines" />
     <MESSAGE value="Sign Up Added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sign Up Added" />
+    <MESSAGE value="Added links in Groups', Users', Deadlines' views" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added links in Groups', Users', Deadlines' views" />
   </component>
   <component name="WindowStateProjectService">
     <state x="453" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580236081896">
@@ -184,30 +203,30 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="691" y="358" width="598" height="390" key="#com.intellij.fileTypes.FileTypeChooser/70.27.1850.1053@70.27.1850.1053" timestamp="1580228387396" />
-    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2" timestamp="1580290555988">
+    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2" timestamp="1580291386327">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1580290555988" />
-    <state width="1804" height="278" key="GridCell.Tab.0.bottom" timestamp="1580290941952">
+    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1580291386327" />
+    <state width="1804" height="278" key="GridCell.Tab.0.bottom" timestamp="1580301702208">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1580290941952" />
-    <state width="1804" height="278" key="GridCell.Tab.0.center" timestamp="1580290941951">
+    <state width="1804" height="278" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1580301702208" />
+    <state width="1804" height="278" key="GridCell.Tab.0.center" timestamp="1580301702206">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1580290941951" />
-    <state width="1804" height="278" key="GridCell.Tab.0.left" timestamp="1580290941950">
+    <state width="1804" height="278" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1580301702206" />
+    <state width="1804" height="278" key="GridCell.Tab.0.left" timestamp="1580301702205">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1580290941950" />
-    <state width="1804" height="278" key="GridCell.Tab.0.right" timestamp="1580290941951">
+    <state width="1804" height="278" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1580301702205" />
+    <state width="1804" height="278" key="GridCell.Tab.0.right" timestamp="1580301702207">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1580290941951" />
-    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1580290558183">
+    <state width="1804" height="278" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1580301702207" />
+    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1580291387673">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1580290558183" />
+    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1580291387673" />
     <state x="763" y="473" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580232633405">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
