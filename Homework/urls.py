@@ -6,6 +6,7 @@ app_name = 'homework'
 urlpatterns = [
     path('', views.index, name='index'),
     path('deadline/<int:deadlineId>/', views.deadlineDetails, name='deadline'),
+    path('deadline/<int:deadlineId>/edit_deadline', views.deadlineEdit, name='deadlineedit'),
     path('user/<int:userId>/', views.userDetails, name='user'),
     path('user/<int:userId>/change_deadline_status/', views.changeDeadlineStatus, name='changedeadlinestatus'),
     path('group/<int:groupId>/', views.groupDetails, name='group'),

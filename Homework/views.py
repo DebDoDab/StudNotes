@@ -18,6 +18,7 @@ def deadlineDetails(request, deadlineId):
     context = {
         'deadline': deadline,
         'group': deadline.groupId,
+        'deadlineExpDate': deadline.expDate.strftime("%Y-%m-%d"),
     }
     return render(request, 'deadline.html', context)
 
@@ -74,3 +75,11 @@ def changeDeadlineStatus(request, userId):
 
     return HttpResponseRedirect(reverse('homework:user', args=(userId,)))
 
+
+def deadlineEdit(request, deadlineId):
+    deadline = Deadline.objects.get(id=deadlineId)
+    deadline.expDate = request.POST['expdate']
+    deadline.body = request.POST['body']
+    deadline.state = (1 if 'state' in request.POST else 0)
+    deadline.save()
+    return HttpResponseRedirect(reverse('homework:deadline', args=(deadlineId,)))

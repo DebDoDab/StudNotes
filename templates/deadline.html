@@ -23,5 +23,19 @@
         Group:
     </h3>
     <a href="{% url "homework:group" group.id %}">{{ group.name }}</a>
+
+    <br><br><br><br>
+
+
+    <form action="{% url "homework:deadlineedit" deadline.id %}" method="POST">
+        {% csrf_token %}
+
+        <input type="text" required placeholder="deadline body" name="body" value="{{ deadline.body }}"><br>
+        <input type="checkbox" name="state" {% if deadline.state %} checked {% endif %} >State<br>
+        <input type="date" required value="{{ deadlineExpDate }}" name="expdate"><br>
+
+        <button type="submit">Edit this deadline</button>
+    </form>
+
 </body>
 </html>
