@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.crypto import get_random_string
+from django.shortcuts import get_object_or_404
 # Create your models here.
 
 
@@ -27,12 +28,22 @@ class User(models.Model):
 
     def login(self, nickname, password):
         # TODO log in
-        user = User.objects.get(nickname=nickname)
-        if not user:
-            raise ValueError("No user with such nickname")
-        if password == user.passhash:
+        user = get_object_or_404(User, nickname=nickname)
+        if self.hash(password) == user.passhash:
             return True
         raise ValueError("Wrong Password")
+
+    @staticmethod
+    def hash(password):
+        return password
+
+    @staticmethod
+    def signup(token, nickname, password):
+        group = Group.objects.get(groupToken=token)
+        if User.objects.filter(nickname=nickname):
+            raise ValueError("User with such nickname already exists")
+        user = group.user_set.create(nickname=nickname, passHash=password)
+        return user
 
 
 class Deadline(models.Model):

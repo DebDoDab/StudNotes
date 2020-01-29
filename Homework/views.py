@@ -51,14 +51,7 @@ def signuppage(request, registered=False):
 
 
 def signupform(request):
-    token = request.POST['token']
-    nickname = request.POST['nickname']
-    password = request.POST['password']
-    group = get_object_or_404(Group, groupToken=token)
-    if User.objects.filter(nickname=nickname):
-        raise ValueError("User with such nickname already exists")
-    user = group.user_set.create(nickname=nickname, passHash=password)
-
+    user = User.signup(request.POST['token'], request.POST['nickname'], User.hash(request.POST['password']))
     return HttpResponseRedirect(reverse('homework:user', args=(user.id,)))
 
 
