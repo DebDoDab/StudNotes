@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+    {% if not registered %}
+    <form action="{% url 'homework:signupform' %}" method="POST">
+
+        {% csrf_token %}
+
+        <input type="text" required placeholder="Token plz" name="token"> <br>
+        <input type="text" required placeholder="Your nickname" name="nickname"> <br>
+        <input type="text" required placeholder="Your password" name="password"> <br>
+        <button type="submit">Sign Up</button>
+    </form>
+    {% else %}
+        <h2>You've successfully registered, gratz</h2>
+    {% endif %}
+</body>
+</html>

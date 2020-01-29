@@ -12,9 +12,8 @@ class Group(models.Model):
 
     def setToken(self):
         token = get_random_string(32)
-        # TODO add check on same tokens
-        while False:
-            pass
+        while Group.objects.get(groupToken=token):
+            token = get_random_string(32)
         self.groupToken = token
 
 
@@ -27,16 +26,23 @@ class User(models.Model):
         return self.nickname
 
     def registration(self, groupToken, nickname, password):
-        # TODO search group by token, find id
-        # groupId = ...
         self.nickname = nickname  # TODO add check on same nicknames
+        if User.objects.get(nickname=nickname):
+            raise ValueError("Same nick exists")
+
         self.passHash = password  # TODO add hashing
+
+        group = Group.objects.get(groupToken=groupToken)
+        groupId = group.id
 
     def login(self, nickname, password):
         # TODO log in
-        # user = db.find(nickname)
-        # if password == user.passhash ...
-        pass
+        user = User.objects.get(nickname=nickname)
+        if not user:
+            raise ValueError("No user with such nickname")
+        if password == user.passhash:
+            return True
+        raise ValueError("Wrong Password")
 
 
 class Deadline(models.Model):

@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from emoji import emojize
 from .models import Group, User, Deadline
 from django.template import loader
+from django.urls import reverse
 
 
 # Create your views here.
@@ -41,3 +42,20 @@ def userDetails(request, userId):
         'deadlineList': ', '.join(str(deadline) for deadline in Deadline.objects.filter(groupId_id=user.groupId_id)),
     }
     return render(request, 'user.html', context)
+
+
+def signuppage(request, registered=False):
+    return render(request, 'registration.html', {'registered': registered})
+
+
+def signupform(request):
+    token = request.POST['token']
+    nickname = request.POST['nickname']
+    password = request.POST['password']
+    group = get_object_or_404(Group, groupToken=token)
+    if User.objects.filter(nickname=nickname):
+        raise ValueError("User with such nickname already exists")
+    group.user_set.create(nickname=nickname, passHash=password)
+    user = User.objects.get(nickname=nickname)
+
+    return HttpResponseRedirect(reverse('homework:user', args=(user.id,)))
