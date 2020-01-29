@@ -2,24 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>User {{ userName }}</title>
+    <title>User {{ user.nickname }}</title>
 </head>
 <body>
     <h2>
-        User {{ userName }} from group <a href="{% url "homework:group" group.id %}">{{ group.name }}</a>
+        User {{ user.nickname }} from group <a href="{% url "homework:group" group.id %}">{{ group.name }}</a>
     </h2>
 
     <h3>
         Resolved Deadlines:
     </h3>
     {% for deadline in resolvedDeadlineList %}
-        <s><a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a><br></s>
+        <form action="{% url 'homework:changedeadlinestatus' user.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="deadline" value="{{ deadline.id }}">Make deadline unresolved</button>
+        </form>
+
+        <s><a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a></s>
+        
+        <br>
     {% endfor %}
 
     <h3>
         Unresolved Deadlines:
     </h3>
     {% for deadline in unresolvedDeadlineList %}
+        <form action="{% url 'homework:changedeadlinestatus' user.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="deadline" value="{{ deadline.id }}">Make deadline unresolved</button>
+        </form>
+
         <a href="{% url "homework:deadline" deadline.id %}">{{ deadline.body }}</a><br>
     {% endfor %}
 </body>

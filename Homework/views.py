@@ -38,7 +38,7 @@ def userDetails(request, userId):
     unresolvedDeadlineList = [x.deadlineId for x in UnresolvedDeadline.objects.filter(userId_id=user.id)]
     resolvedDeadlineList = [x for x in deadlineList if x not in unresolvedDeadlineList]
     context = {
-        'userName': str(user),
+        'user': user,
         'group': user.groupId,
         'resolvedDeadlineList': resolvedDeadlineList,
         'unresolvedDeadlineList': unresolvedDeadlineList,
@@ -62,3 +62,15 @@ def addDeadline(request, groupId):
     deadline.unresolved()
 
     return HttpResponseRedirect(reverse('homework:group', args=(group.id,)))
+
+
+def changeDeadlineStatus(request, userId):
+    deadlineId = request.POST['deadline']
+    if UnresolvedDeadline.objects.filter(deadlineId_id=deadlineId, userId_id=userId):
+        ud = UnresolvedDeadline.objects.get(deadlineId_id=deadlineId, userId_id=userId)
+        ud.delete()
+    else:
+        ud = UnresolvedDeadline.objects.create(deadlineId_id=deadlineId, userId_id=userId)
+
+    return HttpResponseRedirect(reverse('homework:user', args=(userId,)))
+
