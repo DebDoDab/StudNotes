@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5e442b54-d03e-4cbc-ba11-03f11652cdcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/deadline.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/user.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Homework/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Homework/views.py" afterDir="false" />
     </list>
@@ -36,12 +38,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="StudNotes" type="Python.DjangoServer" factoryName="Django server">
@@ -80,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1580225203450</updated>
       <workItem from="1580225217755" duration="13293000" />
-      <workItem from="1580244832862" duration="1891000" />
+      <workItem from="1580244832862" duration="3331000" />
     </task>
     <task id="LOCAL-00001" summary="First view added">
       <created>1580232682019</created>
@@ -124,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580246461311</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added 404 shortcut">
+      <created>1580246793802</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1580246793802</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,7 +152,8 @@
     <MESSAGE value="Added views for Groups, Users, Deadlines" />
     <MESSAGE value="Added template for group" />
     <MESSAGE value="Added 404 for groups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 404 for groups" />
+    <MESSAGE value="Added 404 shortcut" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 404 shortcut" />
   </component>
   <component name="WindowStateProjectService">
     <state x="453" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1580236081896">
@@ -148,30 +164,30 @@
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
     <state x="691" y="358" width="598" height="390" key="#com.intellij.fileTypes.FileTypeChooser/70.27.1850.1053@70.27.1850.1053" timestamp="1580228387396" />
-    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2" timestamp="1580246765744">
+    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2" timestamp="1580246793583">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1580246765744" />
-    <state width="1804" height="278" key="GridCell.Tab.0.bottom" timestamp="1580246717719">
+    <state x="560" y="147" width="860" height="812" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1580246793583" />
+    <state width="1804" height="278" key="GridCell.Tab.0.bottom" timestamp="1580278527016">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1580246717719" />
-    <state width="1804" height="278" key="GridCell.Tab.0.center" timestamp="1580246717719">
+    <state width="1804" height="278" key="GridCell.Tab.0.bottom/70.27.1850.1053@70.27.1850.1053" timestamp="1580278527016" />
+    <state width="1804" height="278" key="GridCell.Tab.0.center" timestamp="1580278527015">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1580246717719" />
-    <state width="1804" height="278" key="GridCell.Tab.0.left" timestamp="1580246717718">
+    <state width="1804" height="278" key="GridCell.Tab.0.center/70.27.1850.1053@70.27.1850.1053" timestamp="1580278527015" />
+    <state width="1804" height="278" key="GridCell.Tab.0.left" timestamp="1580278527015">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1580246717718" />
-    <state width="1804" height="278" key="GridCell.Tab.0.right" timestamp="1580246717719">
+    <state width="1804" height="278" key="GridCell.Tab.0.left/70.27.1850.1053@70.27.1850.1053" timestamp="1580278527015" />
+    <state width="1804" height="278" key="GridCell.Tab.0.right" timestamp="1580278527016">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state width="1804" height="278" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1580246717719" />
-    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1580246462491">
+    <state width="1804" height="278" key="GridCell.Tab.0.right/70.27.1850.1053@70.27.1850.1053" timestamp="1580278527016" />
+    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1580246795423">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>
-    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1580246462491" />
+    <state x="590" y="289" width="800" height="528" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1580246795423" />
     <state x="763" y="473" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1580232633405">
       <screen x="70" y="27" width="1850" height="1053" />
     </state>

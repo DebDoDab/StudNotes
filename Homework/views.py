@@ -13,11 +13,12 @@ def index(request):
 
 
 def deadlineDetails(request, deadlineId):
-    # TODO template
-    deadline = Deadline.objects.get(id=deadlineId)
-    return HttpResponse(f"You are currently looking at {deadlineId} deadline. \n"
-                        f"{deadline}\n"
-                        f"Continue watching and you'll get kicked out from university {emojize(':thumbs_up:')}")
+    deadline = get_object_or_404(Deadline, id=deadlineId)
+    context = {
+        'deadlineName': str(deadline),
+        'groupName': str(deadline.groupId),
+    }
+    return render(request, 'deadline.html', context)
 
 
 def groupDetails(request, groupId):
@@ -33,7 +34,10 @@ def groupDetails(request, groupId):
 
 
 def userDetails(request, userId):
-    # TODO template
-    user = User.objects.get(id=userId)
-    return HttpResponse(f"this is user {user}. Soon we'll add more info"
-                        f"{emojize(':thinking_face:')}")
+    user = get_object_or_404(User, id=userId)
+    context = {
+        'userName': str(user),
+        'groupName': str(user.groupId),
+        'deadlineList': ', '.join(str(deadline) for deadline in Deadline.objects.filter(groupId_id=user.groupId_id)),
+    }
+    return render(request, 'user.html', context)
